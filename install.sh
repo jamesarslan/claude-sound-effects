@@ -24,7 +24,8 @@ mkdir -p "$SOUNDS_DEST"
 cp "$SOUNDS_SRC"/*.mp3 "$SOUNDS_DEST/" 2>/dev/null || true
 cp "$SOUNDS_SRC"/*.wav "$SOUNDS_DEST/" 2>/dev/null || true
 cp "$SOUNDS_SRC"/play-*.sh "$SOUNDS_DEST/"
-chmod +x "$SOUNDS_DEST"/play-*.sh
+cp "$SOUNDS_SRC"/play-sound.sh "$SOUNDS_DEST/"
+chmod +x "$SOUNDS_DEST"/play-*.sh "$SOUNDS_DEST"/play-sound.sh
 echo "  $(ls "$SOUNDS_DEST" | wc -l | tr -d ' ') files installed"
 
 # --- Step 2: Merge hooks into settings.json ---
@@ -56,7 +57,7 @@ MERGED=$(echo "$EXISTING" | jq --argjson new_hooks "$NEW_HOOKS" '
 ')
 
 echo "$MERGED" | jq '.' > "$SETTINGS"
-echo "  Hooks configured for: UserPromptSubmit, Stop, Notification, SubagentStop, PreToolUse"
+echo "  Hooks configured for: UserPromptSubmit, Stop, PreToolUse"
 
 echo ""
 echo "=== Installation complete ==="

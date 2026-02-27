@@ -9,12 +9,10 @@ https://github.com/user-attachments/assets/placeholder
 | When | You hear |
 |------|----------|
 | You send a message | *"Yes milord"*, *"Zug zug"*, *"Acknowledged, sir"* |
-| Task completes | *"Jobs done!"*, *"Great success!"*, *"Construction complete"* |
-| Claude needs attention | *"Work work"*, *"Something need doing?"*, *"Incoming transmission"* |
-| Permission request | *"Wawaweewa!"*, *"Awaiting orders"*, *"Me not that kind of orc"* |
-| Plan finishes | *"Great success!"*, *"Kirov reporting"* |
+| Task completes | *"Jobs done!"*, *"Unit ready"*, *"Construction complete"* |
+| Permission request | *"Wawaweewa!"*, *"Something need doing?"*, *"Me not that kind of orc"* |
 
-40 sound files, 5 hook events, all randomized.
+40 sound files, 3 hook events, all randomized.
 
 ## Install
 

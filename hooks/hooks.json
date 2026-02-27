@@ -22,28 +22,6 @@
         ]
       }
     ],
-    "Notification": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "$HOME/.claude/sounds/play-working.sh"
-          }
-        ]
-      }
-    ],
-    "SubagentStop": [
-      {
-        "matcher": "Plan",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "$HOME/.claude/sounds/play-plan.sh"
-          }
-        ]
-      }
-    ],
     "PreToolUse": [
       {
         "matcher": "AskUserQuestion|ExitPlanMode",

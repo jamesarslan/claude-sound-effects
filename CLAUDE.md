@@ -9,9 +9,7 @@ When installed, Claude Code will play sound effects on these events:
 | Event | Trigger | Sound Theme |
 |-------|---------|-------------|
 | **UserPromptSubmit** | User sends a message | "Yes milord", "Zug zug", "Acknowledged" |
-| **Stop** | Task completes | "Jobs done", "Great success!", "Construction complete" |
-| **Notification** | Claude needs attention | "Work work", "More work?", "Incoming transmission" |
-| **SubagentStop** (Plan) | Plan agent finishes | "Great success!", "Kirov reporting" |
+| **Stop** | Task completes | "Jobs done", "Unit ready", "Construction complete" |
 | **PreToolUse** (Ask/Plan) | Permission request | "Something need doing?", "Wawaweewa" |
 
 ## Installation
