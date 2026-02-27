@@ -1,24 +1,18 @@
 #!/bin/bash
-# Shared sound player with cooldown lock — prevents double-firing
+# Shared sound player with atomic lock — prevents double-firing
 # Usage: play-sound.sh sound1.mp3 sound2.wav sound3.mp3 ...
-# Picks a random sound from the arguments and plays it, unless
-# another sound was played within the last 2 seconds.
+# Uses mkdir as an atomic lock: only one process wins the race.
 
 SOUNDS_DIR="$(cd "$(dirname "$0")" && pwd)"
-LOCK="/tmp/.claude-sound-lock"
-COOLDOWN=2
+LOCK="/tmp/.claude-sound-lock-dir"
 
-# Check cooldown
-if [ -f "$LOCK" ]; then
-  last=$(cat "$LOCK" 2>/dev/null || echo 0)
-  now=$(date +%s)
-  if (( now - last < COOLDOWN )); then
-    exit 0
-  fi
+# Atomic lock: mkdir fails if it already exists (race-condition-proof)
+if ! mkdir "$LOCK" 2>/dev/null; then
+  exit 0
 fi
 
-# Set lock
-date +%s > "$LOCK"
+# Auto-clean lock after 2 seconds (in background)
+(sleep 2 && rmdir "$LOCK" 2>/dev/null) &
 
 # Pick random sound from arguments
 SOUNDS=("$@")
