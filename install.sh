@@ -6,7 +6,7 @@
 #   1. Copies all sounds + play scripts to ~/.claude/sounds/
 #   2. Adds hook entries to ~/.claude/settings.json
 #
-# macOS only (uses afplay). For Linux, swap afplay → paplay/aplay in play-*.sh
+# Cross-platform: auto-detects mpv, paplay, afplay, or aplay
 
 set -euo pipefail
 
@@ -57,7 +57,7 @@ MERGED=$(echo "$EXISTING" | jq --argjson new_hooks "$NEW_HOOKS" '
 ')
 
 echo "$MERGED" | jq '.' > "$SETTINGS"
-echo "  Hooks configured for: UserPromptSubmit, Stop, PreToolUse"
+echo "  Hooks configured for: UserPromptSubmit, Stop, PreToolUse, SubagentStop, Notification"
 
 echo ""
 echo "=== Installation complete ==="

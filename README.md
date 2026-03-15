@@ -11,8 +11,10 @@ https://github.com/user-attachments/assets/placeholder
 | You send a message | *"Yes milord"*, *"Zug zug"*, *"Acknowledged, sir"* |
 | Task completes | *"Jobs done!"*, *"Unit ready"*, *"Construction complete"* |
 | Permission request | *"Wawaweewa!"*, *"Something need doing?"*, *"Me not that kind of orc"* |
+| Subagent completes | *"Great success!"*, *"Kirov reporting"*, *"King in the castle"* |
+| Notification | *"Work work"*, *"Incoming transmission"*, *"More work?"* |
 
-40 sound files, 3 hook events, all randomized.
+40 sound files, 5 hook events, all randomized.
 
 ## Install
 
@@ -53,9 +55,8 @@ rm -rf ~/.claude/sounds
 
 ## Requirements
 
-- **macOS** (uses `afplay`)
-- **jq** for the installer (`brew install jq`)
-- For Linux: swap `afplay` → `paplay` in the play-*.sh scripts
+- **macOS** or **Linux** (auto-detects `mpv`, `paplay`, `afplay`, or `aplay`)
+- **jq** for the installer (`brew install jq` / `sudo dnf install jq`)
 
 ## Sound collection
 

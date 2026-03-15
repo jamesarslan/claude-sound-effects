@@ -17,4 +17,13 @@ fi
 # Pick random sound from arguments
 SOUNDS=("$@")
 RANDOM_SOUND="${SOUNDS[$RANDOM % ${#SOUNDS[@]}]}"
-afplay "$SOUNDS_DIR/$RANDOM_SOUND" &
+# Cross-platform audio playback
+if command -v mpv &>/dev/null; then
+  mpv --no-terminal --volume=80 "$SOUNDS_DIR/$RANDOM_SOUND" &
+elif command -v paplay &>/dev/null; then
+  paplay "$SOUNDS_DIR/$RANDOM_SOUND" &
+elif command -v afplay &>/dev/null; then
+  afplay "$SOUNDS_DIR/$RANDOM_SOUND" &
+elif command -v aplay &>/dev/null; then
+  aplay "$SOUNDS_DIR/$RANDOM_SOUND" &
+fi

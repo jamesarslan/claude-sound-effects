@@ -6,7 +6,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "$HOME/.claude/sounds/play-command.sh"
+            "command": "$HOME/.claude/sounds/play-command.sh",
+            "async": true
           }
         ]
       }
@@ -17,7 +18,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "$HOME/.claude/sounds/play-complete.sh"
+            "command": "$HOME/.claude/sounds/play-complete.sh",
+            "async": true
           }
         ]
       }
@@ -28,7 +30,32 @@
         "hooks": [
           {
             "type": "command",
-            "command": "$HOME/.claude/sounds/play-attention.sh"
+            "command": "$HOME/.claude/sounds/play-attention.sh",
+            "async": true
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/sounds/play-plan.sh",
+            "async": true
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/sounds/play-working.sh",
+            "async": true
           }
         ]
       }

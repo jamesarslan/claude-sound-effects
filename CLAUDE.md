@@ -11,6 +11,8 @@ When installed, Claude Code will play sound effects on these events:
 | **UserPromptSubmit** | User sends a message | "Yes milord", "Zug zug", "Acknowledged" |
 | **Stop** | Task completes | "Jobs done", "Unit ready", "Construction complete" |
 | **PreToolUse** (Ask/Plan) | Permission request | "Something need doing?", "Wawaweewa" |
+| **SubagentStop** | Subagent completes | "Great success!", "Kirov reporting" |
+| **Notification** | Notification fired | "Work work", "Incoming transmission" |
 
 ## Installation
 
@@ -30,8 +32,7 @@ This copies sounds to `~/.claude/sounds/` and merges hooks into `~/.claude/setti
 
 ## Requirements
 
-- **macOS** (uses `afplay` for audio playback)
-- For **Linux**: edit the play-*.sh scripts to replace `afplay` with `paplay` (PulseAudio) or `aplay` (ALSA)
+- **macOS** or **Linux** (auto-detects `mpv`, `paplay`, `afplay`, or `aplay`)
 
 ## Sound Inventory (40 audio files)
 
